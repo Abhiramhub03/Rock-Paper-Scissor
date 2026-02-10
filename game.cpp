@@ -17,6 +17,7 @@ char getPlayersChoice(){
 
     return choice;
 }
+
 char getComputersChoice(){
     srand(time(0));
     int num = rand()%3+1;
@@ -31,6 +32,35 @@ char getComputersChoice(){
     return 0;
 }
 
+string showPlayersChoice(char player){
+    switch(player){
+        case 'r':
+            return "Rock";
+        case 'p':
+            return "Paper";
+        case 's':
+            return "Scissor";
+    }
+    return 0;
+}
+
+string showComputersChoice(char computer){
+    switch(computer){
+        case 'r':
+            return "Rock";
+        case 'p':
+            return "Paper";
+        case 's':
+            return "Scissor";
+    }
+    return 0;
+}
+
+void showResults(char player, char computer){
+    cout<<"Yours Choice : " <<showPlayersChoice(player)<<endl;
+    cout<<"Computers Choice : " <<showComputersChoice(computer)<<endl;
+    cout<<"Try again"<<endl;
+}
 
 int main(){
     char player;
@@ -38,5 +68,5 @@ int main(){
     
     player = getPlayersChoice();
     computer = getComputersChoice();
-
+    showResults(player, computer);
 }
